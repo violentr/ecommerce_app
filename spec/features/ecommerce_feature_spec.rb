@@ -13,4 +13,5 @@ describe 'Ecommerce Store' do
 	expect(Product.last.name).to eq 'iPhone'
  end
 
+
 end
