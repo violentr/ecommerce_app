@@ -1,3 +1,12 @@
 <h3><%= @products.name %> </h3>
-<p><%= @products.description %></p>
-<%= @products.price%>
+<div class="row">
+	<div class='col-md-4'>
+		<%= image_tag('iphone5.png', size:"240x240") %>
+		Description: <%= @products.description %>
+		<p>Price: <%= @products.price%></p>	
+	</div>
+		
+	<div class="">
+		Description: <%= @products.lg_desc %>
+	</div>	
+</div>
