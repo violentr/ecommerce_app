@@ -34,6 +34,7 @@ end
 
 gem 'devise'
 
+
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git',
 branch:'bootstrap3'
 
@@ -42,6 +43,7 @@ group :development, :test do
 	gem 'capybara'
 	gem 'database_cleaner'
 	gem 'shoulda'
+	gem 'factory_girl_rails'
 end
 
 # Use ActiveModel has_secure_password

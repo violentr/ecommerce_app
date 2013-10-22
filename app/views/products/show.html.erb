@@ -1,12 +1,24 @@
-<h3><%= @products.name %> </h3>
+<h3><%= @product.name %> </h3>
 <div class="row">
 	<div class='col-md-4'>
 		<%= image_tag('iphone5.png', size:"240x240") %>
-		Description: <%= @products.description %>
-		<p>Price: <%= @products.price%></p>	
+		Description: <%= @product.description %>
+		<p>Price: <%= @product.price%></p>	
 	</div>
 		
 	<div class="">
-		Description: <%= @products.lg_desc %>
+		Description: <%= @product.lg_desc %>
+	</div>
+	<div class="item_count">
+		<%= form_for current_cart do |f| %>
+			<%= f.hidden_field :product_id, value: @product.id %>
+			<%= f.submit 'Add to Cart' %>
+		<% end %>
+	
+		<div class='item-count'>
+			<%= "#{current_cart.count} items selected" %>
+			<!--  <%= pluralize current_cart.count,'' %> -->
+		</div>
+		<%= link_to "edit cart", edit_cart_path%>
 	</div>	
 </div>
