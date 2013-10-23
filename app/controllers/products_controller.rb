@@ -12,8 +12,13 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-		@product = Product.create
-		redirect_to @product
-	end
+	    @product = Product.create(params[:product]
+	                              .permit(:name, :image))
+	    redirect_to @product
+
+	  	# rescue AWS::S3::Errors::RequestTimeout
+	   #  flash[:notice] = "Upload timed out"
+	   #  redirect_to 'new'
+  	end
 
 end

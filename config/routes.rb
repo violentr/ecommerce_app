@@ -1,8 +1,11 @@
 EcommerceApp::Application.routes.draw do
 
+  get "charges/new"
+  get "charges/create"
   devise_for :users
   resources :products
   resources :carts
+  resources :charges
 
   root :to => "products#index"
 

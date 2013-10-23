@@ -37,6 +37,13 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 gem 'devise'
 
+#Amazon S3
+gem 'aws-sdk'
+
+#Stripe
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
+
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git',
 branch:'bootstrap3'
 
