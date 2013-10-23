@@ -32,8 +32,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'devise'
+#latest paperclip gem
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
+gem 'devise'
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git',
 branch:'bootstrap3'

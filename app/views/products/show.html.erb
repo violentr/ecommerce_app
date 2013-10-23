@@ -1,7 +1,7 @@
 <h3><%= @product.name %> </h3>
 <div class="row">
 	<div class='col-md-4'>
-		<%= image_tag('iphone5.png', size:"240x240") %>
+		<%= image_tag @product.image.url(:thumb), class: 'product_image'%>
 		Description: <%= @product.description %>
 		<p>Price: <%= @product.price%></p>	
 	</div>
@@ -19,6 +19,6 @@
 			<%= "#{current_cart.count} items selected" %>
 			<!--  <%= pluralize current_cart.count,'' %> -->
 		</div>
-		<%= link_to "edit cart", edit_cart_path%>
+		<%= link_to "edit cart", edit_cart_path(current_cart)%>
 	</div>	
 </div>

@@ -1,5 +1,6 @@
+
 <% @products.each do |product| %>
-	<h3><%= link_to product.name, product%> </h3>
+	<h3><%= link_to product.name, product %> </h3>
 	Description: <%= product.description %>
 	<div class="">Price: <%= "#{product.currency}#{product.price}" %></div>
 <% end %>
