@@ -3,10 +3,10 @@
 		<div class='col-md-3'>
 			<h3><%= link_to product.name, product %> </h3>
 			<%= image_tag product.image.url(:thumb), class: 'product_image'%>
-			<% if product.missing_details? %>
-			Description: <%= product.description %>
+			<% if !product.missing_details? %>
+				Description: <%= product.description %>
+				<div class="">Price: <%= "#{product.currency}#{product.price}" %></div>
 			<%end %>
-			<div class="">Price: <%= "#{product.currency}#{product.price}" %></div>
 		
 		</div>
 
