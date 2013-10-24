@@ -15,4 +15,5 @@
 /log/*.log
 /tmp
 /config/aws.yml
+/config/stripe.yml
 .DS_Store

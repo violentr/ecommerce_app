@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
 	def index
-		@products =Product.all
+		@products =Product.all.limit(10)
 	end
 	def show
 		@product =Product.find(params[:id]) 
@@ -20,5 +20,32 @@ class ProductsController < ApplicationController
 	   #  flash[:notice] = "Upload timed out"
 	   #  redirect_to 'new'
   	end
+
+  	def edit
+  		@products =Product.all.map {|el| p el.id}
+  		@product =Product.find(params[:id])
+  	end
+
+  	def update
+  		@product = Product.find(params[:id])
+  		if @product.update_attributes(prod_params)
+	  		flash[:notice]="Your Record Was Updated!"
+	  		redirect_to(action: 'show',id: @product.id)
+	  	else
+	  		flash.now[:errors]=@product.errors.full_messages.join('')
+	  		render ('edit')
+	  	end
+  	end
+  	
+  	def destroy
+  		@product =Product.find(params[:id])
+  		@product.destroy
+
+  	end
+
+	def prod_params
+		params.require(:product).permit(:name,:description,:image)
+	end	
+
 
 end

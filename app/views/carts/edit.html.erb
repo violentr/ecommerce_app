@@ -1,3 +1,9 @@
+<%= form_for current_cart do |f| %>
 <% @products.each do |product| %>
-	<p><%= product.name %> </p>
+	
+	<%= check_box_tag 'cart[product_ids][]', product.id %>
+	<%= product.name %></br>
+
 <% end %>
+ <%= f.submit "Delete", :class => "submit" %>
+ <% end %>

@@ -1,0 +1,14 @@
+<%= @product.inspect %>
+
+<%= form_for @product do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	
+	<%= f.label :description, 'Description of your item' %>
+	<%= f.text_area :description %>
+
+	<%= f.label :image %>
+	<%= f.file_field :image %>
+
+	<%= f.submit  %>
+<%end %>
