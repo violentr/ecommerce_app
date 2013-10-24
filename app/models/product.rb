@@ -5,7 +5,7 @@ class Product < ActiveRecord::Base
                    				bucket: 'ecommerce-app'
 
     def missing_details?
-    	(description ==nil) || (price ==nil) 
+    	(description ==nil) && (price ==nil) 
     end
                    				
 end
