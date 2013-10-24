@@ -1,14 +1,21 @@
 <%= @product.inspect %>
-
+<p><%= @products %> </p>
 <%= form_for @product do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
+	<p><%= f.label :name %></p>
+	<%= f.text_field :name %></br>
 	
-	<%= f.label :description, 'Description of your item' %>
-	<%= f.text_area :description %>
+	<p><%= f.label :description, 'Description' %></p>
+	<%= f.text_area :description, :size =>'40x5' %></br>
 
 	<%= f.label :image %>
 	<%= f.file_field :image %>
-
+	
+	<p><%= f.label :price %></p>
+	<%= f.text_field :price %>
+	
 	<%= f.submit  %>
+	
+
 <%end %>
+<p><%= button_to  "Delete Product" ,product_path(@product), :method => 'delete'%></p>
+

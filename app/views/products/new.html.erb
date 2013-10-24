@@ -1,13 +1,13 @@
 <%= form_for @product, html: {multipart: true} do |f| %>
 	
-	<%= f.label :name %>
-	<%= f.text_field :name %>
+	<p><%= f.label :name %></p>
+	<%= f.text_field :name %></br>
 
-	<%= f.label :description, 'Description of your item' %>
-	<%= f.text_area :description %>
+	<p><%= f.label :description, 'Description of your item' %></p>
+	<%= f.text_area :description, :size =>"40x5" %></br>
 
-	<%= f.label :image %>
-	<%= f.file_field :image %>
+	<p><%= f.label :image %>
+	<%= f.file_field :image %></br>
 
 	<%= f.submit 'Create Product' %>
 

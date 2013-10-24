@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
 	def index
-		@products =Product.all.limit(10)
+		@products =Product.all.order("products.name ASC").limit(10)
 	end
 	def show
 		@product =Product.find(params[:id]) 
@@ -40,11 +40,11 @@ class ProductsController < ApplicationController
   	def destroy
   		@product =Product.find(params[:id])
   		@product.destroy
-
+  		redirect_to products_path
   	end
 
 	def prod_params
-		params.require(:product).permit(:name,:description,:image)
+		params.require(:product).permit(:name,:description,:image,:price)
 	end	
 
 
