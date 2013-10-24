@@ -8,7 +8,7 @@ class ChargesController < ApplicationController
 
 	def create
 	  # Amount in cents
-	  @amount = 500
+	  @amount = (current_cart.total() * 100).to_i
 
 	  customer = Stripe::Customer.create(
 	    :email => 'example@stripe.com',
@@ -21,10 +21,12 @@ class ChargesController < ApplicationController
 	    :description => 'Rails Stripe customer',
 	    :currency    => 'gbp'
 	  )
-
+	  clear_my_basket
+	  redirect_to products_path
+	  
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
-	  redirect_to charges_path
+	  redirect_to products_path
 	end
 
 end

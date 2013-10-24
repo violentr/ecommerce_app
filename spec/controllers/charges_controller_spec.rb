@@ -16,4 +16,12 @@ describe ChargesController do
     end
   end
 
+  describe 'after successful payment ' do
+    it 'should be empty' do
+      get "create"
+      cart =Cart.create
+      expect(cart.clear_it).to be_true
+
+    end
+  end
 end

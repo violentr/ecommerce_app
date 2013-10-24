@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
   def create_empty_cart
   	session[:cart_id] ||=Cart.create.id
   end
+
+  def clear_my_basket
+    session[:cart_id] =Cart.create.id
+  end
 end

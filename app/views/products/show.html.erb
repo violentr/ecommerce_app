@@ -1,7 +1,7 @@
 <h3><%= @product.name %> </h3>
 <div class="row">
-	<div class='col-md-4'>
-		<%= image_tag @product.image.url(:thumb), class: 'product_image'%>
+	<div class='col-md-5'>
+		<%= image_tag @product.image.url(:medium), class: 'product_image'%>
 		<p>Description: <%= @product.description %></p>
 		<p>Price: <%= @product.price%></p>	
 	</div>
@@ -21,6 +21,8 @@
 		</div>
 		<% if current_cart.count > 0 %>
 		<%= link_to "edit cart", edit_cart_path(current_cart)%>
+		<p>Total: <%= current_cart.total %></p>
+		<%= button_to 'Pay now' ,new_charge_path(current_cart), :method => 'get'%>
 		<% end %>
 	</div>
 </div>

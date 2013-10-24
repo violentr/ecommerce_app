@@ -53,6 +53,7 @@ group :development, :test do
 	gem 'database_cleaner'
 	gem 'shoulda'
 	gem 'factory_girl_rails'
+	gem 'rails-erd'
 end
 
 # Use ActiveModel has_secure_password
