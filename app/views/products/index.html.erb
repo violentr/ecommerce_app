@@ -5,7 +5,7 @@
 			<%= image_tag product.image.url(:thumb), class: 'product_image'%>
 				<% if !product.missing_details? %></br>
 				Type:<%= product.description %>
-				<div class="">Price: <%= "#{product.currency}#{product.price}" %></div>
+				<div class="">Price: <%= number_to_currency(product.price,unit: "&pound;",precision: 2) %></div>
 			<%end %>
 		
 		</div>
